@@ -1,0 +1,31 @@
+
+<div class="container text-center for-margin-top">
+  <div class="row">
+    <div class="col">
+      <div class="for-margin-bottom">
+        <button class="btn btn-danger" (click)="onClick()">Add Recipe</button>
+      </div>
+      <recipes-list (id)="getListId($event)" (flag)="getListFlag($event)"></recipes-list>
+    </div>
+    <div class="col">
+      <form *ngIf="isClicked" [formGroup]="addRecipeForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control"  id="name" formControlName="name" placeholder="Example input placeholder">
+          <label for="formGroupExampleInput" class="form-label">Recipe Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="url" id="formImage" formControlName="url" placeholder="Another input placeholder">
+          <label for="formImage" class="form-label">Image URL</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea class="form-control" id="description" cols="30" rows="10" formControlName="description" placeholder="Another input placeholder"></textarea>
+          <label for="formGroupExampleInput2" class="form-label">Description</label>
+        </div>
+          <button type="submit" class="btn btn-danger for-margin-right">Save</button>
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+      </form>
+      <recipes-view [id]="id" *ngIf="flag"></recipes-view>
+    </div>
+  </div>
+</div>
+

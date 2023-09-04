@@ -1,0 +1,11 @@
+.color-edit, .color-edit-logo{
+    color: white;
+}
+
+.color-edit:hover{
+    color: #FB8793;
+}
+
+.active{
+    color: #FB8793 !important;
+}

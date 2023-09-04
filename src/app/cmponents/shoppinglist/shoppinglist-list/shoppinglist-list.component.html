@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of shoppinglist" >
+        <th scope="row">{{ shoppinglist.indexOf(list)+1 }}</th>
+        <td>{{ list.name }}</td>
+        <td>{{ list.amount }}</td>
+        <!-- <td><a routerLink="/shoppinglist-view/{{shoppinglist.indexOf(list)}}" class="link-danger">view</a></td> -->
+      </tr>
+    </tbody>
+  </table>

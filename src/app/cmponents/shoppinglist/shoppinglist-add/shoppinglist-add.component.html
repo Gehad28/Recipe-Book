@@ -1,0 +1,35 @@
+
+<div class="container text-center for-margin-top">
+    <div class="row">
+      <div class="col">
+        <form class="row g-3" [formGroup]="addListForm" (ngSubmit)="onSubmit()">
+          <div class="col-auto">
+            <input type="text" class="form-control"  id="name" formControlName="name" placeholder="Name">
+          </div>
+          <div class="col-auto">
+            <input type="text" class="form-control" id="amount" formControlName="amount" placeholder="Amount">
+          </div>
+          <ng-container formArrayName="lists">
+            <ng-container *ngFor="let list of lists.controls; let i = index">
+              <ng-container [formGroupName]="i" class="row g-3">
+                <div class="col-auto">
+                  <input type="text" class="form-control"  id="name" formControlName="name" placeholder="Name">
+                </div>
+                <div class="col-auto">
+                  <input type="text" class="form-control" id="amount" formControlName="amount" placeholder="Amount">
+                </div>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-danger mb-3" (click)="addList()">Add</button>
+          </div>
+          <button type="submit" class="btn btn-danger">Save</button>
+        </form>
+      </div>
+      <div class="col">
+        <app-shoppinglist-list ></app-shoppinglist-list>
+      </div>
+    </div>
+</div>
+  

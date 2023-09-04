@@ -1,0 +1,18 @@
+
+<div class="container" *ngFor="let recipe of recipes">
+  <a (click)="onClick(recipes.indexOf(recipe))" class="view">
+    <div class="card bg-danger-subtle for-margin-bottom">
+      <img src="{{recipe.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+          <div class="text-section text-dark">
+              <h5 class="card-title fw-bold" *ngIf="recipe">{{ recipe.name }}</h5>
+              <p class="card-text" *ngIf="recipe">{{ recipe.description }}</p>
+          </div>
+          <div>
+            
+          </div>
+      </div>
+    </div>
+  </a>
+</div>
+

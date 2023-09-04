@@ -1,0 +1,10 @@
+<div *ngIf="recipe">
+    <img src="{{recipe.url}}" class="img">
+    <h2>{{ recipe.name | uppercase }}</h2>
+    <p>{{ recipe.description }}</p>
+    <button type="button" class="btn btn-secondary" (click)="onClick()">Edit</button>
+</div>
+
+
+
+
